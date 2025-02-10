@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, Winapi.ShellAPI,
   System.SysUtils, System.StrUtils, System.Variants, System.Classes, System.IniFiles,
   Vcl.Graphics, Vcl.Controls, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.Menus, Vcl.Forms, Vcl.Dialogs, Vcl.FormTabsBar, Vcl.AppEvnts,
-  UMdiChild12;
+  UMdiChild12, Vcl.CheckLst;
 
 type
   TMdiMain = class(TForm)
@@ -37,8 +37,8 @@ type
     DialogsVCL: TMenuItem;
     DialogsNonModal: TMenuItem;
     DialogsModal: TMenuItem;
-    Panel3: TPanel;
     cbOnCloseDialog: TRadioGroup;
+    lbOptions: TCheckListBox;
     procedure Exit1Click(Sender: TObject);
     procedure AddChildClick(Sender: TObject);
     procedure CloseAllClick(Sender: TObject);
@@ -51,6 +51,7 @@ type
     procedure ApplicationEvents1Deactivate(Sender: TObject);
     procedure ApplicationEvents1ModalBegin(Sender: TObject);
     procedure ApplicationEvents1ModalEnd(Sender: TObject);
+    procedure lbOptionsClick(Sender: TObject);
   public
     INI: TIniFile;
     procedure ActiveFormChange(Sender: TObject);
@@ -163,6 +164,11 @@ begin
   INI := TIniFile.Create(ChangeFileExt(ParamStr(0), '.ini'));
   cbOnCloseDialog.ItemIndex := INI.ReadInteger('Main', 'ChildForm.OnClose', 0);
   Screen.OnActiveFormChange := ActiveFormChange;
+
+  lbOptions.ItemEnabled[3] := False;
+  for var i in [1..2, 4..9] do
+    lbOptions.Checked[i] := True;
+  lbOptionsClick(nil);
 end;
 
 procedure TMdiMain.FormDestroy(Sender: TObject);
@@ -173,6 +179,20 @@ begin
       Self.Components[i].Free;  // Sofort weg, also kein Release und auch ohne OnClose.
   INI.WriteInteger('Main', 'ChildForm.OnClose', cbOnCloseDialog.ItemIndex);
   INI.Free;
+end;
+
+procedure TMdiMain.lbOptionsClick(Sender: TObject);
+begin
+  FormTabsBar1.HideInactiveFormOnParent := lbOptions.Checked[0];
+  FormTabsBar1.HideMinimizedForm        := lbOptions.Checked[1];
+  FormTabsBar1.ShowTabsMenuButton       := lbOptions.Checked[2];
+
+  FormTabsBar1.TabOptions.Draggable          := lbOptions.Checked[4];
+  FormTabsBar1.TabOptions.MarkInvisibleForm  := lbOptions.Checked[5];
+  FormTabsBar1.TabOptions.ShowFormIcon       := lbOptions.Checked[6];
+  FormTabsBar1.TabOptions.ShowFormSystemMenu := lbOptions.Checked[7];
+  FormTabsBar1.TabOptions.ShowCloseButton    := lbOptions.Checked[8];
+  FormTabsBar1.TabOptions.ShowHintForTruncatedCaption := lbOptions.Checked[9];
 end;
 
 procedure TMdiMain.ResetClick(Sender: TObject);

@@ -2,8 +2,8 @@ object MdiMain: TMdiMain
   Left = 732
   Top = 30
   Caption = 'MDI-Demo (12)'
-  ClientHeight = 571
-  ClientWidth = 939
+  ClientHeight = 570
+  ClientWidth = 935
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,60 +19,18 @@ object MdiMain: TMdiMain
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
-    Top = 74
-    Width = 89
-    Height = 472
-    Align = alLeft
-    Caption = 'Panel1'
-    TabOrder = 0
-  end
-  object Panel2: TPanel
-    Left = 0
-    Top = 546
-    Width = 939
-    Height = 25
-    Align = alBottom
-    Caption = 'Form.FormStyle = fsMDIForm'
-    TabOrder = 1
-  end
-  object LogMemo: TMemo
-    Left = 767
-    Top = 74
-    Width = 172
-    Height = 472
-    Align = alRight
-    ScrollBars = ssVertical
-    TabOrder = 2
-    WordWrap = False
-  end
-  object FormTabsBar1: TFormTabsBar
-    Left = 0
-    Top = 0
-    Width = 939
-    Height = 30
-    ParentColor = False
-    TabOptions.ShowFormIcon = True
-    TabOptions.ShowFormSystemMenu = True
-    TabOptions.ShowCloseButton = True
-    TabOptions.ShowHintForTruncatedCaption = True
-    ShowTabsMenuButton = True
-  end
-  object Panel3: TPanel
-    Left = 0
     Top = 30
-    Width = 939
-    Height = 44
-    Align = alTop
-    BevelOuter = bvNone
+    Width = 161
+    Height = 515
+    Align = alLeft
     ShowCaption = False
-    TabOrder = 3
+    TabOrder = 0
     object cbOnCloseDialog: TRadioGroup
-      Left = 0
-      Top = 0
-      Width = 489
-      Height = 41
+      Left = 8
+      Top = 16
+      Width = 145
+      Height = 145
       Caption = ' ChildForm.OnClose '
-      Columns = 5
       ItemIndex = 0
       Items.Strings = (
         '(none)'
@@ -82,9 +40,60 @@ object MdiMain: TMdiMain
         'WinAPI')
       TabOrder = 0
     end
+    object lbOptions: TCheckListBox
+      Left = 8
+      Top = 184
+      Width = 145
+      Height = 177
+      ItemHeight = 15
+      Items.Strings = (
+        'HideInactiveFormOnParent'
+        'HideMinimizedForm'
+        'ShowTabsMenuButton'
+        ''
+        'Draggable'
+        'MarkInvisibleForm'
+        'ShowFormIcon'
+        'ShowFormSystemMenu'
+        'ShowCloseButton'
+        'ShowHintForTruncatedCaption')
+      TabOrder = 1
+      OnClick = lbOptionsClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 545
+    Width = 935
+    Height = 25
+    Align = alBottom
+    Caption = 'Form.FormStyle = fsMDIForm'
+    TabOrder = 1
+  end
+  object LogMemo: TMemo
+    Left = 763
+    Top = 30
+    Width = 172
+    Height = 515
+    Align = alRight
+    ScrollBars = ssVertical
+    TabOrder = 2
+    WordWrap = False
+  end
+  object FormTabsBar1: TFormTabsBar
+    Left = 0
+    Top = 0
+    Width = 935
+    Height = 30
+    ParentColor = False
+    TabOptions.ShowFormIcon = True
+    TabOptions.ShowFormSystemMenu = True
+    TabOptions.ShowCloseButton = True
+    TabOptions.ShowHintForTruncatedCaption = True
+    ShowTabsMenuButton = True
   end
   object MainMenu1: TMainMenu
-    Left = 128
+    Left = 216
     Top = 48
     object Exit1: TMenuItem
       Caption = 'Exit'
@@ -177,7 +186,7 @@ object MdiMain: TMdiMain
     OnDeactivate = ApplicationEvents1Deactivate
     OnModalBegin = ApplicationEvents1ModalBegin
     OnModalEnd = ApplicationEvents1ModalEnd
-    Left = 240
+    Left = 328
     Top = 48
   end
 end

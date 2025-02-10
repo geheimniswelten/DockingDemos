@@ -36,7 +36,6 @@ type
     DialogsVCL: TMenuItem;
     DialogsNonModal: TMenuItem;
     DialogsModal: TMenuItem;
-    Panel3: TPanel;
     cbOnCloseDialog: TRadioGroup;
     procedure Exit1Click(Sender: TObject);
     procedure AddChildClick(Sender: TObject);

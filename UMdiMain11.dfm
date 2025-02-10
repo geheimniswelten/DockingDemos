@@ -2,8 +2,8 @@ object MdiMain: TMdiMain
   Left = 732
   Top = 30
   Caption = 'MDI-Demo (11)'
-  ClientHeight = 571
-  ClientWidth = 939
+  ClientHeight = 569
+  ClientWidth = 931
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,48 +18,18 @@ object MdiMain: TMdiMain
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
-    Top = 44
-    Width = 89
-    Height = 502
-    Align = alLeft
-    Caption = 'Panel1'
-    TabOrder = 0
-  end
-  object Panel2: TPanel
-    Left = 0
-    Top = 546
-    Width = 939
-    Height = 25
-    Align = alBottom
-    Caption = 'Form.FormStyle = fsMDIForm'
-    TabOrder = 1
-  end
-  object LogMemo: TMemo
-    Left = 767
-    Top = 44
-    Width = 172
-    Height = 502
-    Align = alRight
-    ScrollBars = ssVertical
-    TabOrder = 2
-    WordWrap = False
-  end
-  object Panel3: TPanel
-    Left = 0
     Top = 0
-    Width = 939
-    Height = 44
-    Align = alTop
-    BevelOuter = bvNone
+    Width = 145
+    Height = 544
+    Align = alLeft
     ShowCaption = False
-    TabOrder = 3
+    TabOrder = 0
     object cbOnCloseDialog: TRadioGroup
-      Left = 0
-      Top = 0
-      Width = 489
-      Height = 41
+      Left = 8
+      Top = 16
+      Width = 129
+      Height = 145
       Caption = ' ChildForm.OnClose '
-      Columns = 5
       ItemIndex = 0
       Items.Strings = (
         '(none)'
@@ -70,9 +40,28 @@ object MdiMain: TMdiMain
       TabOrder = 0
     end
   end
+  object Panel2: TPanel
+    Left = 0
+    Top = 544
+    Width = 931
+    Height = 25
+    Align = alBottom
+    Caption = 'Form.FormStyle = fsMDIForm'
+    TabOrder = 1
+  end
+  object LogMemo: TMemo
+    Left = 759
+    Top = 0
+    Width = 172
+    Height = 544
+    Align = alRight
+    ScrollBars = ssVertical
+    TabOrder = 2
+    WordWrap = False
+  end
   object MainMenu1: TMainMenu
-    Left = 128
-    Top = 48
+    Left = 208
+    Top = 24
     object Exit1: TMenuItem
       Caption = 'Exit'
       OnClick = Exit1Click
@@ -164,7 +153,7 @@ object MdiMain: TMdiMain
     OnDeactivate = ApplicationEvents1Deactivate
     OnModalBegin = ApplicationEvents1ModalBegin
     OnModalEnd = ApplicationEvents1ModalEnd
-    Left = 240
-    Top = 48
+    Left = 320
+    Top = 24
   end
 end

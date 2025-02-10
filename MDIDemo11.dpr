@@ -15,3 +15,4 @@ begin
   Application.CreateForm(TMdiMain, MdiMain);
   Application.Run;
 end.
+
