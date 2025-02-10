@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{6784F9A5-5227-4CBB-BDF7-80D442F107E0}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="MDIDemo11.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DockDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DevExDock.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="walibeiro\DockDemoW.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="MDIDemo11">
+        <MSBuild Projects="MDIDemo11.dproj"/>
+    </Target>
+    <Target Name="MDIDemo11:Clean">
+        <MSBuild Projects="MDIDemo11.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MDIDemo11:Make">
+        <MSBuild Projects="MDIDemo11.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DockDemo">
+        <MSBuild Projects="DockDemo.dproj"/>
+    </Target>
+    <Target Name="DockDemo:Clean">
+        <MSBuild Projects="DockDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DockDemo:Make">
+        <MSBuild Projects="DockDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DevExDock">
+        <MSBuild Projects="DevExDock.dproj"/>
+    </Target>
+    <Target Name="DevExDock:Clean">
+        <MSBuild Projects="DevExDock.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DevExDock:Make">
+        <MSBuild Projects="DevExDock.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DockDemoW">
+        <MSBuild Projects="walibeiro\DockDemoW.dproj"/>
+    </Target>
+    <Target Name="DockDemoW:Clean">
+        <MSBuild Projects="walibeiro\DockDemoW.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DockDemoW:Make">
+        <MSBuild Projects="walibeiro\DockDemoW.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="MDIDemo11;DockDemo;DevExDock;DockDemoW"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="MDIDemo11:Clean;DockDemo:Clean;DevExDock:Clean;DockDemoW:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="MDIDemo11:Make;DockDemo:Make;DevExDock:Make;DockDemoW:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

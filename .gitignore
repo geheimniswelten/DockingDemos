@@ -1,0 +1,10 @@
+*.local
+*.identcache
+*.~dsk
+*.dsk
+*.dsv
+*.tvsconfig
+/_dcu
+/_bin/*.ini
+/__history
+/__recovery
