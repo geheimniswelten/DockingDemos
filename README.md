@@ -5,6 +5,9 @@
 * DevExDock.dpr/.exe - DevExpress (TdxDockingManager, TdxDockSite and TdxDockPanel)
 * DockDemoW.dpr/.exe - Walibeiro (TFormDockable)
 
+# Dialoge (MDI)
+* Zum Testen der Fokuskontrolle gibt es in den MDI-Demos ein paar Dialoge und LogMeldungen, also ob nach dem Schließen der Fokus noch dort steht, wo er sein sollte.
+
 ## bekannte Probleme (DevExpress)
 * dtMone und mehr als ein dtClient : der neue Child ist nicht sichtbar
 * erneut eindocken ist immer maximiert (fast wie dtClient)
