@@ -5,8 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, Winapi.ShellAPI,
   System.SysUtils, System.StrUtils, System.Variants, System.Classes, System.IniFiles,
-  Vcl.Graphics, Vcl.Controls, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.Menus, Vcl.Forms, Vcl.Dialogs, Vcl.FormTabsBar, Vcl.AppEvnts,
-  UMdiChild12, Vcl.CheckLst;
+  Vcl.Graphics, Vcl.Controls, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.CheckLst, Vcl.Menus, Vcl.Forms, Vcl.Dialogs, Vcl.FormTabsBar, Vcl.AppEvnts,
+  UMdiChild12;
 
 type
   TMdiMain = class(TForm)
@@ -68,8 +68,14 @@ procedure TMdiMain.ActiveFormChange(Sender: TObject);
 begin
   if Assigned(Screen.ActiveCustomForm) then
     LogMemo.Lines.Add('OnActiveFormChange: ' + Screen.ActiveCustomForm.Name)
-  else
+  else begin
     LogMemo.Lines.Add('OnActiveFormChange: nil');
+    TThread.ForceQueue(nil, procedure
+      begin
+        if Assigned(Screen.ActiveCustomForm) then
+          LogMemo.Lines.Add('  DELAYED: ' + Screen.ActiveCustomForm.Name)
+      end);
+  end;
 end;
 
 procedure TMdiMain.AddChildClick(Sender: TObject);

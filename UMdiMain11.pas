@@ -65,8 +65,14 @@ procedure TMdiMain.ActiveFormChange(Sender: TObject);
 begin
   if Assigned(Screen.ActiveCustomForm) then
     LogMemo.Lines.Add('OnActiveFormChange: ' + Screen.ActiveCustomForm.Name)
-  else
+  else begin
     LogMemo.Lines.Add('OnActiveFormChange: nil');
+    TThread.ForceQueue(nil, procedure
+      begin
+        if Assigned(Screen.ActiveCustomForm) then
+          LogMemo.Lines.Add('  DELAYED: ' + Screen.ActiveCustomForm.Name)
+      end);
+  end;
 end;
 
 procedure TMdiMain.AddChildClick(Sender: TObject);

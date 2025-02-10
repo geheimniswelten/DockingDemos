@@ -2,8 +2,8 @@ object MdiMain: TMdiMain
   Left = 732
   Top = 30
   Caption = 'MDI-Demo (11)'
-  ClientHeight = 569
-  ClientWidth = 931
+  ClientHeight = 568
+  ClientWidth = 927
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,7 +20,7 @@ object MdiMain: TMdiMain
     Left = 0
     Top = 0
     Width = 145
-    Height = 544
+    Height = 543
     Align = alLeft
     ShowCaption = False
     TabOrder = 0
@@ -42,18 +42,18 @@ object MdiMain: TMdiMain
   end
   object Panel2: TPanel
     Left = 0
-    Top = 544
-    Width = 931
+    Top = 543
+    Width = 927
     Height = 25
     Align = alBottom
     Caption = 'Form.FormStyle = fsMDIForm'
     TabOrder = 1
   end
   object LogMemo: TMemo
-    Left = 759
+    Left = 755
     Top = 0
     Width = 172
-    Height = 544
+    Height = 543
     Align = alRight
     ScrollBars = ssVertical
     TabOrder = 2
