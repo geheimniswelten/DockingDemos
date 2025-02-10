@@ -26,7 +26,7 @@
 * beim Eindocken eines DockHost/TabGroup werden manchmal die Tabs verdoppelt (untereinander)
 * beim Drag&Drop einer Gruppe funktioniert das Transparente manchmal nicht (stattdessen nur noch der flackernde Rahmen)
 
-## Screenshots
+# Screenshots
 
 * DockSite
 
@@ -47,3 +47,7 @@
 * MDI (bis Delphi 11)
 
   ![MDIDemo11](MDIDemo11Screenshot.png)
+
+## Sonstiges
+* https://sourceforge.net/p/radstudiodocdem/code/HEAD/tree/branches/RadStudio_2010/DelphiCodeExamples/Docking/
+* https://en.delphipraxis.net/topic/11103-docking-example/
